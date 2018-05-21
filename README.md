@@ -5,5 +5,7 @@ By [Red River Software](https://river.red/)
 ## Folder Structure
 
 [docs/](docs/) - General Documentation
+
 [python_api/](python_api/) - Python API
+
 [mobile_app/](mobile_app/) - Mobile App
