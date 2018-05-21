@@ -8,6 +8,7 @@ class Robot():
     @staticmethod
     def _calc_ultrasound_distance(start_time: float, end_time: float) -> float:
         '''
+        Calculates distance of an object using ultrasonic pulse times
         :param start_time: Pulse start time
         :param arg2: Pulse end time
         :return: return distance in centimetres
