@@ -401,3 +401,6 @@ $RECYCLE.BIN/
 
 
 # End of https://www.gitignore.io/api/git,python,intellij,reactnative,Windows,Linux
+.idea/vcs.xml
+.idea/modules.xml
+.idea/inspectionProfiles/profiles_settings.xml
