@@ -14,7 +14,7 @@ When the app is first launched on a user's mobile device they will be prompted t
 ```
 First, lets start with a team name:
 ```
-Gives the user an option to input a team name for the purposes of the Red River Robotics Competition.
+Gives the user an option to input a team name for the purposes of the Red River Robotics Rally.
 
 ```
 Next, we'll need the IP of your Pi:
