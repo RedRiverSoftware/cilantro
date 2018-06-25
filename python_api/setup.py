@@ -7,7 +7,7 @@ setup(
     version=VERSION,
     url='https://github.com/RedRiverSoftware/cilantro/',
     author='RedRiverSoftware',
-    author_email='os@griver.red',
+    author_email='os@river.red',
     description='A CamJam Edukit 3 Wrapper',
     long_description=open('README.md').read(),
     packages=['cilantro'],
