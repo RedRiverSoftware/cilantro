@@ -13,7 +13,7 @@ robot = Robot()
 # Go forward for 5 seconds then stop
 robot.motors.m0 = 100
 robot.motors.m1 = 100
-sleep(3)
+sleep(5)
 robot.motors.m0 = 0
 robot.motors.m1 = 0
 ```
