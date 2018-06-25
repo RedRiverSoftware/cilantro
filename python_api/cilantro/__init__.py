@@ -1,4 +1,4 @@
 from cilantro.robot import Robot
-from cilantro.ultrasound import UltraSoundSensor
+from cilantro.sensors import UltrasoundSensor, LineSensor
 
-__all__ = ['Robot', 'UltraSoundSensor']
+__all__ = ['Robot', 'UltrasoundSensor', 'LineSensor']

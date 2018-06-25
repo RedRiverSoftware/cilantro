@@ -1,12 +1,12 @@
-from gpiozero import CamJamRobot
-from typings import Optional
+from gpiozero import CamJamKitRobot
+from typing import Optional
 
 
 class Motors():
     def __init__(self):
         self._m0 = 0
         self._m1 = 0
-        self._cam_jam_robot = CamJamRobot()
+        self._cam_jam_robot = CamJamKitRobot()
 
     @property
     def m0(self) -> int:
@@ -16,12 +16,13 @@ class Motors():
         '''
         return self._m0
 
-    @m0.setter()
+    @m0.setter
     def m0(self, power: int) -> None:
         '''
         Sets the value of Motor 0
         :param power: Power as a percent
         '''
+        print("Setting power to",power)
         self._m0 = power
         self._update_power(power, m1=self._m1)
 
@@ -33,7 +34,7 @@ class Motors():
         '''
         return self._m1
 
-    @m1.setter()
+    @m1.setter
     def m1(self, power: int) -> None:
         '''
         Sets the value of Motor 1
@@ -52,8 +53,13 @@ class Motors():
         '''
         if m0 is None and m1 is None:
             raise ValueError("One of m0 or m1 must be specified")
-        power_percent = power/100.0
         if m0:
-            self._cam_jam_robot.value = (m0, power_percent)
+            self._cam_jam_robot.value = (self._normalise_power(m0),
+                                         self._normalise_power(power))
         if m1:
-            self._cam_jam_robot.value = (power, m1)
+            self._cam_jam_robot.value = (self._normalise_power(power),
+                                         self._normalise_power(m1))
+
+    @staticmethod
+    def _normalise_power(power: int):
+        return power/100.0
