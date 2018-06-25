@@ -16,11 +16,11 @@ class LineSensor():
     def __init__(self, pin: int) -> None:
         self.line_sensor = CamJamLineSensor(pin)
         self.on_line = False
-        self.line_sensor.when_no_line = self._line_seen
-        self.line_sensor.when_line = self._line_not_seen
+        self.line_sensor.when_no_line = self._line_not_seen
+        self.line_sensor.when_line = self._line_seen
 
-    def _line_seen(self):
+    def _line_not_seen(self):
         self.on_line = True
     
-    def _line_not_seen(self):
+    def _line_seen(self):
         self.on_line = False
