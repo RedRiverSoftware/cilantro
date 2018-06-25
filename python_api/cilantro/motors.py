@@ -22,7 +22,6 @@ class Motors():
         Sets the value of Motor 0
         :param power: Power as a percent
         '''
-        print("Setting power to",power)
         self._m0 = power
         self._update_power(power, m1=self._m1)
 
