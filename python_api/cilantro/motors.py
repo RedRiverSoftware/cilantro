@@ -23,7 +23,7 @@ class Motors():
         :param power: Power as a percent
         '''
         self._m0 = power
-        self._update_power(power, m1=self._m1)
+        self._update_power(m0=power, m1=self._m1)
 
     @property
     def m1(self) -> int:
@@ -40,24 +40,17 @@ class Motors():
         :param power: Power as a percent
         '''
         self._m1 = power
-        self._update_power(power, m0=self._m0)
+        self._update_power(m0=self._m0, m1=power)
 
-    def _update_power(self, power: int, m0: Optional[int] = None,
-                      m1: Optional[int] = None) -> None:
+    def _update_power(self, m0: int, m1: int):
         '''
-        Sets the power of the motors. Either m0 or m1 *must* be specified
-        :param power: Power motor is to be set to
-        :param m0: power of Motor 0
-        :param m1: power of Motor 1
+        Sets the power of the motors
+        :param m0: Power of motor 0
+        :param m1: Power of motor 1
         '''
-        if m0 is None and m1 is None:
-            raise ValueError("One of m0 or m1 must be specified")
-        if m0:
-            self._cam_jam_robot.value = (self._normalise_power(m0),
-                                         self._normalise_power(power))
-        if m1:
-            self._cam_jam_robot.value = (self._normalise_power(power),
-                                         self._normalise_power(m1))
+        normalised_m0 = self._normalise_power(m0)
+        normalised_m1 = self._normalise_power(m1)
+        self._cam_jam_robot.value = (normalised_m0, normalised_m1)
 
     @staticmethod
     def _normalise_power(power: int):
