@@ -17,3 +17,20 @@ sleep(5)
 robot.motors.m0 = 0
 robot.motors.m1 = 0
 ```
+
+
+## Distribute
+Create source distribution
+```
+python setup.py sdist
+```
+
+Create wheel
+```
+python setup.py bdist_wheel
+```
+
+Upload to pypi
+```
+twine upload dist/*
+```

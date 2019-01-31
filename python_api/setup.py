@@ -3,10 +3,10 @@ from setuptools import setup
 VERSION = "0.1.0"
 
 setup(
-    name='cilantro',
+    name='rr-cilantro',
     version=VERSION,
     url='https://github.com/RedRiverSoftware/cilantro/',
-    author='RedRiverSoftware',
+    author='Red River Software',
     author_email='os@river.red',
     description='A CamJam Edukit 3 Wrapper',
     long_description=open('README.md').read(),
@@ -15,7 +15,7 @@ setup(
     zip_safe=False,
     platforms='any',
     python_requires='>=3.4',
-    keywords=['cilantro', 'robotbot', 'camjam'],
+    keywords=['cilantro', 'robot', 'camjam'],
     install_requires=[
         'gpiozero==1.4.1',
     ],
